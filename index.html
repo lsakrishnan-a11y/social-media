@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern to-do list application with local storage functionality">
+    <meta name="theme-color" content="#667eea">
+    <title>To-Do List App | Manage Your Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>✓ TaskHub</h1>
+            <p class="subtitle">Your personal task management assistant</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Add a new task..."
+                        maxlength="200"
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-btn">Add</button>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <div class="stat">
+                    <span class="stat-label">Total Tasks</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value" id="completedTasks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Remaining</span>
+                    <span class="stat-value" id="remainingTasks">0</span>
+                </div>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="tasks-section">
+                <ul id="taskList" class="task-list"></ul>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <p>📭 No tasks yet. Add one to get started!</p>
+                </div>
+            </section>
+
+            <!-- Actions Section -->
+            <section class="actions-section">
+                <button id="clearCompletedBtn" class="action-btn clear-completed">
+                    Clear Completed
+                </button>
+                <button id="clearAllBtn" class="action-btn clear-all">
+                    Clear All
+                </button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>💾 Your tasks are automatically saved to your browser's local storage</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
